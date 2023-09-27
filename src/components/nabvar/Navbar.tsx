@@ -8,7 +8,10 @@ const Navbar = () => {
       <ul className="flex items-center gap-x-5 text-white">
         {links.map((link: any) => {
           return (
-            <li key={link.id} className="hover:text-slate-500">
+            <li
+              key={link.id}
+              className="hover:text-slate-500 text-lg font-semibold"
+            >
               <Link href={link.path}>{link.title}</Link>
             </li>
           );
