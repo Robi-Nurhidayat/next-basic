@@ -4,7 +4,9 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <div className="flex py-2.5  items-center justify-between">
-      <div>PGPagi</div>
+      <div>
+        <Link href={"/"}>PGPagi</Link>
+      </div>
       <ul className="flex items-center gap-x-5 text-white">
         {links.map((link: any) => {
           return (
