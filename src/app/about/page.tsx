@@ -5,7 +5,11 @@ const About = () => {
   return (
     <div>
       <div className="relative mb-8">
-        <Image src={Bg} alt="bg-about" className="h-[25vh] object-cover" />
+        <Image
+          src={Bg}
+          alt="bg-about"
+          className="h-[25vh] object-cover grayscale"
+        />
         <div className="bg-green-500 w-[max-content] px-2 rounded-sm absolute z-10 bottom-[20px] left-5">
           <h1 className="text-2xl font-bold">Digital Storytellers</h1>
           <p className="text-md font-semibold -mt-1">

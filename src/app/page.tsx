@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Hero from "public/hero.png";
 const Home = () => {
   return (
@@ -11,9 +12,12 @@ const Home = () => {
           It is a long established fact that a reader will be distracted by the
           readable content of a page.
         </p>
-        <button className="bg-green-600 font-semibold p-4 text-white rounded hover:bg-green-700 duration-200">
+        <Link
+          href={"/portofolio"}
+          className="bg-green-600 font-semibold p-4 text-white rounded hover:bg-green-700 duration-200"
+        >
           See Our Works
-        </button>
+        </Link>
       </div>
       <div className=" flex-1 flex justify-end">
         <Image src={Hero} alt="Hero Image" className="w-[90%]" />
