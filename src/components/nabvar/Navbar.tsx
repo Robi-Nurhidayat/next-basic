@@ -1,5 +1,6 @@
 import links from "@/utils/links";
 import Link from "next/link";
+import DarkMode from "../DarkMode/DarkMode";
 
 const Navbar = () => {
   return (
@@ -8,6 +9,7 @@ const Navbar = () => {
         <Link href={"/"}>PGPagi</Link>
       </div>
       <ul className="flex items-center gap-x-5 text-white">
+        <DarkMode />
         {links.map((link: any) => {
           return (
             <li
