@@ -1,20 +1,31 @@
 import Image from "next/image";
 import Dog from "public/dog.jpg";
 import John from "public/john.jpg";
-const BlogPost = () => {
+import { notFound } from "next/navigation";
+async function getData(id: any) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: "no-store",
+  });
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    return notFound();
+  }
+
+  return res.json();
+}
+const BlogPost = async ({ params }: any) => {
+  const data = await getData(params.id);
   return (
-    <div>
+    <div className="h-[calc(100vh-100px)]">
       <div className="flex gap-x-2 mb-6">
         <div className="flex-1 flex flex-col justify-between">
           <h1 className="text-[33px] font-bold leading-[2.3rem] ">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            {data.title}
           </h1>
-          <p className="leading-[1.2rem] ">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, nisi,
-            doloremque dolores accusantium, assumenda voluptatum ipsam
-            aspernatur itaque earum laborum possimus perferendis laboriosam.
-            Aliquid, vitae maxime amet rerum commodi voluptatibus?
-          </p>
+          <p className="leading-[1.2rem] ">{data.body}</p>
           <div className="flex items-center gap-x-2">
             <Image
               src={John}

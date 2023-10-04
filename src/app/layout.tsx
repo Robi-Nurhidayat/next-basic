@@ -3,8 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer/Footer";
-import { ThemeContext, ThemeProvider } from "../../context/ThemeContext";
-import { useContext } from "react";
+import { ThemeProvider } from "../../context/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,20 +17,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const test: boolean = false;
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
         <ThemeProvider>
-          {/* <div
-            className={`px-[200px] ${
-              test ? "bg-red-700" : "bg-slate-900"
-            }  text-white flex flex-col`}
-          > */}
-          <Navbar />
-          {children}
-          <Footer />
-          {/* </div> */}
+          <div className="px-[100px] bg-slate-800">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

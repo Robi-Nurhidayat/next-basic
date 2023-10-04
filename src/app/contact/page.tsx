@@ -2,8 +2,8 @@ import Image from "next/image";
 import ContactImage from "public/contact.png";
 const Contact = () => {
   return (
-    <>
-      <div className="h-[calc(100vh-100px)]">
+    <div className="h-[calc(100vh-100px)]">
+      <div>
         <h1 className="text-center mb-8 mt-8 text-[50px] font-bold">
           Let's Keep in Touch
         </h1>
@@ -46,7 +46,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Contact;

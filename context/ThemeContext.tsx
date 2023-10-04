@@ -20,17 +20,7 @@ export const ThemeProvider = ({ children }: any) => {
 
   return (
     <ThemeContext.Provider value={{ toggle, darkOrLight }}>
-      {/* <div
-        className={`px-[200px] ${darkOrLight ? "bg-slate-900" : "bg-white"} ${
-          darkOrLight ? "red" : "red"
-        } text-red-400 flex flex-col `}
-      >
-        {children}
-      </div> */}
-
-      {/* <div className="px-[200px] bg-black">{children}</div> */}
-
-      <div className="px-[200px] !text-blue-800">{children}</div>
+      <div className="px-[100px]">{children}</div>
     </ThemeContext.Provider>
   );
 };
