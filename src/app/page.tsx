@@ -3,7 +3,7 @@ import Link from "next/link";
 import Hero from "public/hero.png";
 const Home = () => {
   return (
-    <div className="flex  h-[100%] items-center justify-between">
+    <div className="flex  h-[calc(100vh-100px)] items-center justify-between">
       <div className=" flex-1">
         <h1 className="bg-clip-text text-transparent bg-gradient-to-b from-[#98EECC] to-[#DEF5E5] text-[50px] w-[70%]  leading-[60px] font-bold mb-8">
           Better design for your digital products.

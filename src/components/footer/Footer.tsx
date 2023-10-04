@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="mt-[auto] h-[50px] flex justify-between items-center">
+    <div className="mt-[auto] h-[50px] box-border flex justify-between items-center">
       <div className="">2023 Robi Nurhidayat, All rights reserved</div>
       <div className="flex gap-x-2">
         <Image src="/facebook.png" width={30} height={30} alt="icon facebook" />

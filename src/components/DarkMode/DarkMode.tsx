@@ -1,14 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useContext } from "react";
 import { CiLight } from "react-icons/ci";
 import { MdOutlineDarkMode } from "react-icons/md";
+import { ThemeContext } from "../../../context/ThemeContext";
 const DarkMode = () => {
-  const [darkOrLight, setDarkOrLight] = useState(false);
+  const { darkOrLight, toggle } = useContext(ThemeContext);
+  console.log(darkOrLight);
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => setDarkOrLight(!darkOrLight)}
-    >
+    <div className="cursor-pointer" onClick={toggle}>
       <div
         className="border  relative  flex items-center justify-between gap-3 rounded-full px-[3px] py-[1px] text-xl"
         style={{ transition: "all 10s" }}

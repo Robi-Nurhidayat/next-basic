@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const Portofolio = () => {
   return (
-    <div>
-      <h4 className="mb-4 text-[20px] font-semibold">Choose a gallery</h4>
+    <div className="">
+      <h4 className="mb-4 text-[20px] font-semibold ">Choose a gallery</h4>
       <div className="flex gap-8">
         <Link
           href={"/portofolio/illustration"}

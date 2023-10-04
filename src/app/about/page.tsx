@@ -3,7 +3,7 @@ import Bg from "public/bg-about.jpg";
 
 const About = () => {
   return (
-    <div>
+    <div className="h-[calc(100vh-100px)]">
       <div className="relative mb-8">
         <Image
           src={Bg}

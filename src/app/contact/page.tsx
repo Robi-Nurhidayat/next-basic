@@ -3,7 +3,7 @@ import ContactImage from "public/contact.png";
 const Contact = () => {
   return (
     <>
-      <div className="">
+      <div className="h-[calc(100vh-100px)]">
         <h1 className="text-center mb-8 mt-8 text-[50px] font-bold">
           Let's Keep in Touch
         </h1>

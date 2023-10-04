@@ -4,7 +4,7 @@ import DarkMode from "../DarkMode/DarkMode";
 
 const Navbar = () => {
   return (
-    <div className="flex py-2.5  items-center justify-between">
+    <div className="flex box-border h-[50px]  items-center justify-between">
       <div>
         <Link href={"/"}>PGPagi</Link>
       </div>
