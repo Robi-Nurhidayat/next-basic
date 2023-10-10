@@ -3,7 +3,7 @@ import Link from "next/link";
 import Dog from "public/dog.jpg";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  const res = await fetch("http://localhost:3000/api/posts", {
     cache: "no-store",
   });
   // The return value is *not* serialized
@@ -24,7 +24,7 @@ const Blog = async () => {
     <div className="pt-4 flex flex-col gap-y-8">
       {data.map((val: any) => {
         return (
-          <Link href={`/blog/${val.id}`} key={data.id}>
+          <Link href={`/blog/${val._id}`} key={data.id}>
             <div className="flex items-center gap-x-10">
               <div className="h-[200px] flex-[0_0_30%]">
                 <Image

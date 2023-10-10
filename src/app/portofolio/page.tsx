@@ -3,6 +3,12 @@ import Web from "public/web2.jpg";
 import Android from "public/android.jpg";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portofolio page",
+  description: "this is a description Portofolio",
+};
 
 const Portofolio = () => {
   return (

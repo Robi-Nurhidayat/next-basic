@@ -3,7 +3,7 @@ import Dog from "public/dog.jpg";
 import John from "public/john.jpg";
 import { notFound } from "next/navigation";
 async function getData(id: any) {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
   // The return value is *not* serialized
@@ -16,6 +16,15 @@ async function getData(id: any) {
 
   return res.json();
 }
+
+export async function generateMetadata({ params }: any) {
+  const post = await getData(params.id);
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
 const BlogPost = async ({ params }: any) => {
   const data = await getData(params.id);
   return (
@@ -44,15 +53,7 @@ const BlogPost = async ({ params }: any) => {
         </div>
       </div>
       <div>
-        <p className="leading-[1.2rem] text-justify mb-6">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
-          provident sit amet praesentium? Dolorem laudantium numquam possimus
-          quo nam sed nulla deleniti, veritatis porro obcaecati omnis sapiente
-          id aliquid nemo. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Nemo, vero animi quod dolor veniam exercitationem nobis deserunt
-          recusandae, fugiat facilis minima mollitia ullam laborum voluptas
-          facere voluptatem ab repellendus odio!
-        </p>
+        <p className="leading-[1.2rem] text-justify mb-6">{data.desc}</p>
         <p className="leading-[1.2rem] text-justify mb-6">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat
           provident sit amet praesentium? Dolorem laudantium numquam possimus
